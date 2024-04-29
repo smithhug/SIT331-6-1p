@@ -1,0 +1,69 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\hugo5\\OneDrive - Deakin University\\T1 - 2024\\SIT331 - FULLSTACK\\SIT331 Tasks\\6-1p\\wwwroot\\images\\deakin-logo.png",
+      "PackagePath": "staticwebassets\\images\\deakin-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\hugo5\\OneDrive - Deakin University\\T1 - 2024\\SIT331 - FULLSTACK\\SIT331 Tasks\\6-1p\\wwwroot\\styles\\robot.css",
+      "PackagePath": "staticwebassets\\styles\\robot.css"
+    },
+    {
+      "Id": "C:\\Users\\hugo5\\OneDrive - Deakin University\\T1 - 2024\\SIT331 - FULLSTACK\\SIT331 Tasks\\6-1p\\wwwroot\\styles\\theme-feeling-blue.css",
+      "PackagePath": "staticwebassets\\styles\\theme-feeling-blue.css"
+    },
+    {
+      "Id": "C:\\Users\\hugo5\\OneDrive - Deakin University\\T1 - 2024\\SIT331 - FULLSTACK\\SIT331 Tasks\\6-1p\\wwwroot\\styles\\theme-flattop.css",
+      "PackagePath": "staticwebassets\\styles\\theme-flattop.css"
+    },
+    {
+      "Id": "C:\\Users\\hugo5\\OneDrive - Deakin University\\T1 - 2024\\SIT331 - FULLSTACK\\SIT331 Tasks\\6-1p\\wwwroot\\styles\\theme-material.css",
+      "PackagePath": "staticwebassets\\styles\\theme-material.css"
+    },
+    {
+      "Id": "C:\\Users\\hugo5\\OneDrive - Deakin University\\T1 - 2024\\SIT331 - FULLSTACK\\SIT331 Tasks\\6-1p\\wwwroot\\styles\\theme-monokai.css",
+      "PackagePath": "staticwebassets\\styles\\theme-monokai.css"
+    },
+    {
+      "Id": "C:\\Users\\hugo5\\OneDrive - Deakin University\\T1 - 2024\\SIT331 - FULLSTACK\\SIT331 Tasks\\6-1p\\wwwroot\\styles\\theme-muted.css",
+      "PackagePath": "staticwebassets\\styles\\theme-muted.css"
+    },
+    {
+      "Id": "C:\\Users\\hugo5\\OneDrive - Deakin University\\T1 - 2024\\SIT331 - FULLSTACK\\SIT331 Tasks\\6-1p\\wwwroot\\styles\\theme-newspaper.css",
+      "PackagePath": "staticwebassets\\styles\\theme-newspaper.css"
+    },
+    {
+      "Id": "C:\\Users\\hugo5\\OneDrive - Deakin University\\T1 - 2024\\SIT331 - FULLSTACK\\SIT331 Tasks\\6-1p\\wwwroot\\styles\\theme-outline.css",
+      "PackagePath": "staticwebassets\\styles\\theme-outline.css"
+    },
+    {
+      "Id": "C:\\Users\\hugo5\\OneDrive - Deakin University\\T1 - 2024\\SIT331 - FULLSTACK\\SIT331 Tasks\\6-1p\\wwwroot\\swagger\\favicon-16x16.png",
+      "PackagePath": "staticwebassets\\swagger\\favicon-16x16.png"
+    },
+    {
+      "Id": "C:\\Users\\hugo5\\OneDrive - Deakin University\\T1 - 2024\\SIT331 - FULLSTACK\\SIT331 Tasks\\6-1p\\wwwroot\\swagger\\favicon-32x32.png",
+      "PackagePath": "staticwebassets\\swagger\\favicon-32x32.png"
+    },
+    {
+      "Id": "C:\\Users\\hugo5\\OneDrive - Deakin University\\T1 - 2024\\SIT331 - FULLSTACK\\SIT331 Tasks\\6-1p\\wwwroot\\swagger\\favicon.ico",
+      "PackagePath": "staticwebassets\\swagger\\favicon.ico"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.3-2p.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.3-2p.props",
+      "PackagePath": "build\\3-2p.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.3-2p.props",
+      "PackagePath": "buildMultiTargeting\\3-2p.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.3-2p.props",
+      "PackagePath": "buildTransitive\\3-2p.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

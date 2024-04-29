@@ -1,0 +1,308 @@
+{
+	"id": "cc672f73-a20c-4d23-913f-4e8eed7864be",
+	"name": "SIT331 - 3-2p",
+	"timestamp": "2024-03-18T08:09:33.315Z",
+	"collection_id": "33538462-888fd831-db4b-4a9a-a9cc-4b1ed5ed7468",
+	"folder_id": 0,
+	"environment_id": "33538462-75287883-0b05-4be9-b0fc-de200473204e",
+	"totalPass": 0,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-03-18T08:09:30.911Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "3750df2a-fa3c-4ab4-add9-fb2a62bf26dc",
+			"name": "Get all robot commands",
+			"url": "localhost:5032/api/robot-commands",
+			"time": 278,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				278
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "aa6f3fbb-781c-4e7e-a613-ffb066149022",
+			"name": "Get move commands only",
+			"url": "localhost:5032/api/robot-commands/move",
+			"time": 18,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				18
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "0cf15a86-c63c-4e2c-8c87-3a8770d9fb6d",
+			"name": "Get a robot command by ID",
+			"url": "localhost:5032/api/robot-commands/3",
+			"time": 34,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				34
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "9042ceda-4950-4da6-9a86-d6758a41c1d3",
+			"name": "Add a new command",
+			"url": "localhost:5032/api/robot-commands",
+			"time": 94,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				94
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1224bad9-a4c2-4c9a-8284-b65e2f773f39",
+			"name": "Update an existing robot command",
+			"url": "localhost:5032/api/robot-commands/3",
+			"time": 15,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				15
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c24c4cdf-2e1b-4291-b7af-c7554d703f14",
+			"name": "Delete a robot command by ID",
+			"url": "localhost:5032/api/robot-commands/3",
+			"time": 8,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				8
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "5bb033d6-2c6d-4269-b759-7625b6dc2fb6",
+			"name": "Get all maps",
+			"url": "localhost:5032/api/maps",
+			"time": 14,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				14
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "b15b8742-5729-47b0-bde1-6d6a6cae2339",
+			"name": "Get square maps only",
+			"url": "localhost:5032/api/maps/square",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				9
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "80533a84-bfe1-4656-ad83-490ebbfd598d",
+			"name": "Get a map by ID",
+			"url": "localhost:5032/api/maps/1",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "de6e64e2-1689-417a-a441-b5e23cd47cb0",
+			"name": "Add a new map",
+			"url": "localhost:5032/api/maps",
+			"time": 15,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				15
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "19bd7b5c-2803-490c-9c19-0ef40a533083",
+			"name": "Update an existing map",
+			"url": "localhost:5032/api/maps/1",
+			"time": 9,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				9
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "84bb8fde-3fe4-4e0b-a836-d9ee8ff4874f",
+			"name": "Delete a map by ID",
+			"url": "localhost:5032/api/maps/2",
+			"time": 6,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "9b94398a-de8d-42d9-a5f0-e2e2e7e971cd",
+			"name": "Check Coordinate",
+			"url": "localhost:5032/api/maps/1/2-3",
+			"time": 14,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				14
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 520,
+	"collection": {
+		"requests": [
+			{
+				"id": "3750df2a-fa3c-4ab4-add9-fb2a62bf26dc",
+				"method": "GET"
+			},
+			{
+				"id": "aa6f3fbb-781c-4e7e-a613-ffb066149022",
+				"method": "GET"
+			},
+			{
+				"id": "0cf15a86-c63c-4e2c-8c87-3a8770d9fb6d",
+				"method": "GET"
+			},
+			{
+				"id": "9042ceda-4950-4da6-9a86-d6758a41c1d3",
+				"method": "POST"
+			},
+			{
+				"id": "1224bad9-a4c2-4c9a-8284-b65e2f773f39",
+				"method": "PUT"
+			},
+			{
+				"id": "c24c4cdf-2e1b-4291-b7af-c7554d703f14",
+				"method": "DELETE"
+			},
+			{
+				"id": "5bb033d6-2c6d-4269-b759-7625b6dc2fb6",
+				"method": "GET"
+			},
+			{
+				"id": "b15b8742-5729-47b0-bde1-6d6a6cae2339",
+				"method": "GET"
+			},
+			{
+				"id": "80533a84-bfe1-4656-ad83-490ebbfd598d",
+				"method": "GET"
+			},
+			{
+				"id": "de6e64e2-1689-417a-a441-b5e23cd47cb0",
+				"method": "POST"
+			},
+			{
+				"id": "19bd7b5c-2803-490c-9c19-0ef40a533083",
+				"method": "PUT"
+			},
+			{
+				"id": "84bb8fde-3fe4-4e0b-a836-d9ee8ff4874f",
+				"method": "DELETE"
+			},
+			{
+				"id": "9b94398a-de8d-42d9-a5f0-e2e2e7e971cd",
+				"method": "GET"
+			}
+		]
+	}
+}

@@ -1,0 +1,787 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Robot Controller API",
+    "description": "New backend service that provides resources for the Moon robot simulator.",
+    "contact": {
+      "name": "Hugo Smith",
+      "email": "smithhug@deakin.edu.au"
+    }
+  },
+  "paths": {
+    "/api/maps": {
+      "get": {
+        "tags": [
+          "Maps"
+        ],
+        "summary": "Retrieves all maps.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Map"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Map"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Map"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Maps"
+        ],
+        "summary": "Creates a new map.",
+        "description": "Sample request:\r\n            \r\nPOST /api/maps\r\n{\r\n    \"name\": \"Map Name\",\r\n    \"rows\": 10,\r\n    \"columns\": 10,\r\n    \"description\": \"Description of the map\"\r\n}",
+        "requestBody": {
+          "description": "The new map to be created.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Map"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Map"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Map"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Returns the newly created map."
+          },
+          "400": {
+            "description": "If the map is null.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "If a map with the same name already exists.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/maps/square": {
+      "get": {
+        "tags": [
+          "Maps"
+        ],
+        "summary": "Retrieves all square maps",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Map"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Map"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Map"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/maps/{id}": {
+      "get": {
+        "tags": [
+          "Maps"
+        ],
+        "summary": "Retrieves a specific map by its ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the map to retrieve.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the requested map."
+          },
+          "404": {
+            "description": "If the map with the specified ID is not found."
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Maps"
+        ],
+        "summary": "Updates an existing map.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the map to update.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The updated information for the map.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Map"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Map"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Map"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "If the update is successful."
+          },
+          "400": {
+            "description": "If the updated map is null.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "If the map with the specified ID is not found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "If a map with the same name already exists.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Maps"
+        ],
+        "summary": "Deletes a map.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the map to delete.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "If the deletion is successful."
+          },
+          "404": {
+            "description": "If the map with the specified ID is not found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/maps/{id}/{x}-{y}": {
+      "get": {
+        "tags": [
+          "Maps"
+        ],
+        "summary": "Retrieves the data at the specified coordinates (x, y) on the map with the given ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the map.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "x",
+            "in": "path",
+            "description": "The x-coordinate.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "y",
+            "in": "path",
+            "description": "The y-coordinate.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the data at the specified coordinates."
+          },
+          "400": {
+            "description": "If the provided coordinates are out of bounds.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "If the map with the specified ID is not found.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/robot-commands": {
+      "get": {
+        "tags": [
+          "RobotCommands"
+        ],
+        "summary": "Retrieves all robot commands.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RobotCommand"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RobotCommand"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RobotCommand"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "RobotCommands"
+        ],
+        "summary": "Creates a robot command.",
+        "description": "Sample request: \r\n\r\nPOST /api/robot-commands \r\n{ \r\n    \"name\": \"DANCE\", \r\n    \"isMoveCommand\": true, \r\n    \"description\": \"Salsa on the Moon\" \r\n}",
+        "requestBody": {
+          "description": "A new robot command from the HTTP request.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RobotCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RobotCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RobotCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Returns the newly created robot command"
+          },
+          "400": {
+            "description": "If the robot command is null",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "If a robot command with the same name already exists.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/robot-commands/move": {
+      "get": {
+        "tags": [
+          "RobotCommands"
+        ],
+        "summary": "Retrieves all move commands.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RobotCommand"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RobotCommand"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RobotCommand"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/robot-commands/{id}": {
+      "get": {
+        "tags": [
+          "RobotCommands"
+        ],
+        "summary": "Retrieves all move commands.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "RobotCommands"
+        ],
+        "summary": "Updates an existing robot command.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the robot command to update.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The updated information for the robot command.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RobotCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RobotCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RobotCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "204": {
+            "description": "If the update is successful."
+          },
+          "400": {
+            "description": "If the updated command is null."
+          },
+          "404": {
+            "description": "If the robot command with the specified ID is not found."
+          },
+          "409": {
+            "description": "If a robot command with the same name already exists."
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "RobotCommands"
+        ],
+        "summary": "Deletes a robot command.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the robot command to delete.",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "204": {
+            "description": "If the deletion is successful."
+          },
+          "404": {
+            "description": "If the robot command with the specified ID is not found."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Map": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "columns": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "rows": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isSquare": {
+            "type": "boolean",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProblemDetails": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "instance": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": { }
+      },
+      "RobotCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "isMoveCommand": {
+            "type": "boolean"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
